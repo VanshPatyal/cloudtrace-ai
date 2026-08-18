@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CloudTrace AI — Observability & Real-Time Inspector for Multi-Agent AI</title>
+  <meta name="description" content="Open-spec debugger, step replay engine, and token cost visualizer for autonomous AI agents deployed on Azure, AWS, and Kubernetes." />
+  
+  <!-- Modern Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <!-- Core Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Background Animated Gradients -->
+  <div class="bg-glow bg-glow-1"></div>
+  <div class="bg-glow bg-glow-2"></div>
+  <div class="bg-glow bg-glow-3"></div>
+
+  <!-- Navigation Bar -->
+  <header class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#" class="brand">
+        <div class="brand-icon">
+          <i class="fa-solid fa-cloud-bolt"></i>
+        </div>
+        <div class="brand-text">
+          <span class="brand-name">CloudTrace<span class="brand-accent">.AI</span></span>
+          <span class="brand-badge"><i class="fa-brands fa-microsoft"></i> Azure Native</span>
+        </div>
+      </a>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="#inspector" class="nav-link"><i class="fa-solid fa-microchip me-1"></i> Inspector</a>
+        <a href="#features" class="nav-link"><i class="fa-solid fa-cubes me-1"></i> Features</a>
+        <a href="#architecture" class="nav-link"><i class="fa-solid fa-diagram-project me-1"></i> Azure Setup</a>
+        <a href="#open-spec" class="nav-link"><i class="fa-solid fa-code me-1"></i> Open Spec</a>
+      </nav>
+
+      <div class="nav-actions">
+        <!-- Dark/Light Theme Switcher -->
+        <button id="themeToggle" class="theme-toggle-btn" aria-label="Toggle Dark/Light Mode" title="Toggle Theme">
+          <i class="fa-solid fa-moon icon-dark"></i>
+          <i class="fa-solid fa-sun icon-light"></i>
+        </button>
+
+        <!-- Easter Egg CLI Hint Trigger -->
+        <button id="cliTriggerBtn" class="cli-hint-btn" title="Open Interactive CLI Modal (Ctrl + K)">
+          <i class="fa-solid fa-terminal"></i>
+          <span><kbd>Ctrl</kbd>+<kbd>K</kbd></span>
+        </button>
+
+        <!-- Primary CTA -->
+        <a href="#inspector" class="btn btn-primary nav-cta">
+          <span>Explore Inspector</span>
+          <i class="fa-solid fa-arrow-right"></i>
+        </a>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button id="mobileMenuBtn" class="mobile-menu-btn" aria-label="Toggle Navigation Menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero" id="hero">
+    <div class="hero-container">
+      <div class="hero-badge-row">
+        <span class="hero-badge">
+          <span class="pulse-dot"></span>
+          <span>Zero Telemetry Overhead • Open Specification v1.0</span>
+        </span>
+      </div>
+
+      <h1 class="hero-title">
+        Stop Print-Debugging <br />
+        <span class="text-gradient">Multi-Agent LLM Chains.</span>
+      </h1>
+
+      <p class="hero-subtitle">
+        Real-time visual tracing, tool call inspection, and state replay for autonomous AI workflows running on Azure Static Web Apps, Serverless, and Kubernetes.
+      </p>
+
+      <div class="hero-actions">
+        <a href="#inspector" class="btn btn-primary btn-lg">
+          <i class="fa-solid fa-play"></i>
+          <span>Launch Live Inspector</span>
+        </a>
+
+        <div class="hero-install-box">
+          <i class="fa-solid fa-terminal text-accent"></i>
+          <code id="installCmd">npm i @cloudtrace/agent-sdk</code>
+          <button id="copyInstallBtn" class="copy-btn" title="Copy command">
+            <i class="fa-regular fa-copy"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Cloud Provider Integrity Bar -->
+      <div class="cloud-providers">
+        <span class="providers-label">Native Infrastructure Support:</span>
+        <div class="provider-badges">
+          <span class="provider-tag azure"><i class="fa-brands fa-microsoft"></i> Azure Static Apps</span>
+          <span class="provider-tag aws"><i class="fa-brands fa-aws"></i> AWS Lambda</span>
+          <span class="provider-tag gcp"><i class="fa-brands fa-google"></i> GCP Cloud Run</span>
+          <span class="provider-tag k8s"><i class="fa-solid fa-dharmachakra"></i> Kubernetes</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section Divider -->
+  <div class="section-divider"></div>
+
+  <!-- Interactive Live Inspector Section -->
+  <section class="inspector-section" id="inspector">
+    <div class="section-header text-center">
+      <span class="section-tag"><i class="fa-solid fa-bolt"></i> Real-Time Demonstration</span>
+      <h2 class="section-title">Interactive AI Agent Trace Inspector</h2>
+      <p class="section-desc">
+        Click any execution node in the pipeline graph below to inspect inputs, tool outputs, token consumption, latency breakdown, and raw JSON payloads.
+      </p>
+    </div>
+
+    <!-- Inspector Outer Container -->
+    <div class="inspector-container">
+      
+      <!-- Scenario Selector Tabs -->
+      <div class="scenario-bar">
+        <div class="scenario-label">
+          <i class="fa-solid fa-diagram-next"></i> Select Agent Workflow:
+        </div>
+        <div class="scenario-tabs">
+          <button class="scenario-tab active" data-scenario="debate">
+            <i class="fa-solid fa-comments"></i>
+            <span>Multi-Agent LLM Debate</span>
+          </button>
+          <button class="scenario-tab" data-scenario="scraper">
+            <i class="fa-solid fa-spider"></i>
+            <span>Resilient Web Scraper</span>
+          </button>
+          <button class="scenario-tab" data-scenario="refactor">
+            <i class="fa-solid fa-code-branch"></i>
+            <span>Code Refactoring Pipeline</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Inspector Main Workspace Grid -->
+      <div class="inspector-workspace">
+        
+        <!-- Left Panel: Execution Node Graph -->
+        <div class="inspector-graph-panel">
+          <div class="panel-header">
+            <div class="panel-title">
+              <i class="fa-solid fa-network-wired"></i>
+              <span>Execution Graph</span>
+            </div>
+            <div class="execution-meta" id="graphMetaInfo">
+              <span class="badge badge-success"><i class="fa-solid fa-check"></i> Status: 200 OK</span>
+              <span class="meta-item"><i class="fa-regular fa-clock"></i> <span id="totalLatency">1,420 ms</span></span>
+              <span class="meta-item"><i class="fa-solid fa-coins"></i> <span id="totalTokens">2,840 tokens</span></span>
+            </div>
+          </div>
+
+          <!-- Nodes Chain Container -->
+          <div class="nodes-chain" id="nodesChain">
+            <!-- Dynamic Node Cards Generated by JavaScript -->
+          </div>
+
+          <!-- Timeline Playback Controls Bar -->
+          <div class="playback-bar">
+            <div class="playback-controls">
+              <button id="btnPlayPause" class="playback-btn" title="Play/Pause Simulation">
+                <i class="fa-solid fa-pause"></i>
+              </button>
+              <button id="btnStepPrev" class="playback-btn" title="Previous Step">
+                <i class="fa-solid fa-step-backward"></i>
+              </button>
+              <button id="btnStepNext" class="playback-btn" title="Next Step">
+                <i class="fa-solid fa-step-forward"></i>
+              </button>
+              <button id="btnReplay" class="playback-btn" title="Restart Playback">
+                <i class="fa-solid fa-rotate-left"></i>
+              </button>
+            </div>
+
+            <div class="timeline-slider-wrapper">
+              <input type="range" id="timelineSlider" min="0" max="100" value="100" class="timeline-slider" />
+            </div>
+
+            <div class="speed-selector">
+              <span class="speed-label">Speed:</span>
+              <button class="speed-btn active" data-speed="1">1x</button>
+              <button class="speed-btn" data-speed="2">2x</button>
+              <button class="speed-btn" data-speed="5">5x</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Panel: Node Inspector Drawer -->
+        <div class="inspector-details-panel" id="detailsPanel">
+          <div class="panel-header">
+            <div class="panel-title" id="nodeDetailTitle">
+              <i class="fa-solid fa-microchip text-accent"></i>
+              <span>Node Inspector</span>
+            </div>
+            <span class="badge" id="nodeDetailStatus">Selected: Node #01</span>
+          </div>
+
+          <div class="node-details-content" id="nodeDetailsContent">
+            <!-- Dynamic Content Injected via JS -->
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Section Divider -->
+  <div class="section-divider"></div>
+
+  <!-- Features Grid Section -->
+  <section class="features-section" id="features">
+    <div class="section-header text-center">
+      <span class="section-tag"><i class="fa-solid fa-shield-halved"></i> Enterprise Capabilities</span>
+      <h2 class="section-title">Built for Production AI Pipelines</h2>
+      <p class="section-desc">
+        Designed from the ground up for zero-friction integration into serverless architectures, cloud functions, and microservices.
+      </p>
+    </div>
+
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon text-azure">
+          <i class="fa-solid fa-gauge-high"></i>
+        </div>
+        <h3 class="feature-title">Sub-Millisecond Overhead</h3>
+        <p class="feature-text">
+          Asynchronous telemetry buffer writes telemetry batches directly to Azure Event Hubs or Redis with zero execution blocking.
+        </p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon text-emerald">
+          <i class="fa-solid fa-clock-rotate-left"></i>
+        </div>
+        <h3 class="feature-title">Time-Travel State Replay</h3>
+        <p class="feature-text">
+          Capture state vectors at each agent iteration. Replay exact agent prompts, tool parameters, and response structures deterministically.
+        </p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon text-amber">
+          <i class="fa-solid fa-coins"></i>
+        </div>
+        <h3 class="feature-title">Token Cost Guardrails</h3>
+        <p class="feature-text">
+          Track real-time spend across GPT-4o, Claude 3.5, and Azure OpenAI instances. Set automated circuit-breakers before runaway loops cost thousands.
+        </p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon text-purple">
+          <i class="fa-solid fa-lock"></i>
+        </div>
+        <h3 class="feature-title">Privacy-First Data Redaction</h3>
+        <p class="feature-text">
+          Automatic client-side PII scrubbing regexes hide API keys, emails, and sensitive user credentials before telemetry leaves your VPC.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Azure Architecture Section -->
+  <section class="architecture-section" id="architecture">
+    <div class="section-header text-center">
+      <span class="section-tag"><i class="fa-brands fa-microsoft"></i> Cloud Architecture</span>
+      <h2 class="section-title">Azure Static Web Apps Integration</h2>
+      <p class="section-desc">
+        Seamlessly deployed on Azure CDN Global Edge with automated GitHub Actions CI/CD workflows.
+      </p>
+    </div>
+
+    <div class="arch-card">
+      <div class="arch-diagram">
+        <div class="arch-node">
+          <i class="fa-brands fa-github text-white"></i>
+          <span>GitHub Push</span>
+          <small>main branch</small>
+        </div>
+        <div class="arch-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+        <div class="arch-node active">
+          <i class="fa-solid fa-gears text-azure"></i>
+          <span>GitHub Actions</span>
+          <small>Automated Workflow</small>
+        </div>
+        <div class="arch-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+        <div class="arch-node azure-node">
+          <i class="fa-brands fa-microsoft text-azure"></i>
+          <span>Azure Static Web App</span>
+          <small>Global Edge CDN</small>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Open Specification Code Snippet -->
+  <section class="open-spec-section" id="open-spec">
+    <div class="section-header text-center">
+      <span class="section-tag"><i class="fa-solid fa-code"></i> Developer Integration</span>
+      <h2 class="section-title">One Line of Code Telemetry</h2>
+      <p class="section-desc">
+        Wrap your existing agent framework (LangChain, AutoGen, CrewAI, or custom SDK) with lightweight decorators.
+      </p>
+    </div>
+
+    <div class="code-editor-card">
+      <div class="editor-header">
+        <div class="editor-dots">
+          <span class="dot red"></span>
+          <span class="dot yellow"></span>
+          <span class="dot green"></span>
+        </div>
+        <div class="editor-tabs">
+          <button class="editor-tab active" data-lang="js">agent.js</button>
+          <button class="editor-tab" data-lang="py">agent.py</button>
+          <button class="editor-tab" data-lang="json">trace-spec.json</button>
+        </div>
+        <button id="copyCodeBtn" class="btn-copy-code"><i class="fa-regular fa-copy"></i> Copy</button>
+      </div>
+
+      <div class="editor-body">
+        <pre><code id="codeSnippet" class="language-javascript">
+// Initialize CloudTrace AI on Azure Environment
+import { CloudTrace } from "@cloudtrace/agent-sdk";
+
+const tracer = new CloudTrace({
+  apiKey: process.env.CLOUDTRACE_AZURE_KEY,
+  environment: "production",
+  redactSensitiveData: true
+});
+
+// Wrap your autonomous LLM Agent loop
+const agent = tracer.wrapAgent(async (context) => {
+  const plan = await agent.think("Architect", context.prompt);
+  const toolResult = await agent.executeTool("WebSearch", plan.query);
+  return await agent.synthesize(toolResult);
+});
+        </code></pre>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <div class="brand">
+          <i class="fa-solid fa-cloud-bolt brand-icon"></i>
+          <span class="brand-name">CloudTrace<span class="brand-accent">.AI</span></span>
+        </div>
+        <p class="footer-tagline">Open-spec observability for autonomous AI multi-agent workflows.</p>
+      </div>
+
+      <div class="footer-links">
+        <div class="footer-col">
+          <h4>Product</h4>
+          <a href="#inspector">Live Inspector</a>
+          <a href="#features">Features</a>
+          <a href="#architecture">Azure Setup</a>
+        </div>
+        <div class="footer-col">
+          <h4>Documentation</h4>
+          <a href="#open-spec">Open Specification</a>
+          <a href="DECISIONS.md" target="_blank">DECISIONS.md</a>
+          <a href="README.md" target="_blank">README & Interview Cheat-Sheet</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2026 CloudTrace AI. Built for Acdyon Technologies Frontend Challenge. Deployed on Azure Static Web Apps.</p>
+      <p class="cli-hint">Press <kbd>Ctrl</kbd> + <kbd>K</kbd> to unlock Developer Terminal Easter Egg</p>
+    </div>
+  </footer>
+
+  <!-- Modal: Developer Terminal Easter Egg -->
+  <div class="cli-modal-overlay" id="cliModal">
+    <div class="cli-modal-content">
+      <div class="cli-modal-header">
+        <div class="cli-title">
+          <i class="fa-solid fa-terminal text-accent me-2"></i>
+          <span>CloudTrace Developer Terminal v1.0.4 [/sys/trace]</span>
+        </div>
+        <button id="cliCloseBtn" class="cli-close-btn" aria-label="Close modal">&times;</button>
+      </div>
+      <div class="cli-modal-body" id="cliOutput">
+        <div class="cli-line">Welcome to CloudTrace AI Developer CLI Console.</div>
+        <div class="cli-line text-muted">Type <span class="text-accent">'help'</span> to see available diagnostic commands.</div>
+        <div class="cli-line text-muted">Or try typing <span class="text-accent">'status'</span>, <span class="text-accent">'azure'</span>, <span class="text-accent">'theme'</span>, or <span class="text-accent">'nodes'</span>.</div>
+        <br />
+      </div>
+      <div class="cli-input-row">
+        <span class="cli-prompt">cloudtrace-cli:~#</span>
+        <input type="text" id="cliInput" class="cli-input" placeholder="Type a command (e.g. 'help', 'status', 'azure')..." autofocus />
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div id="toast" class="toast"></div>
+
+  <!-- Application Logic -->
+  <script src="script.js"></script>
+</body>
+</html>
