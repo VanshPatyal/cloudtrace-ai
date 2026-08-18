@@ -60,18 +60,3 @@ Azure will automatically create a GitHub Actions workflow `.github/workflows/azu
 
 ---
 
-## 📚 Technical Interview Cheat-Sheet (For Cloud Engineers)
-
-If the hiring manager asks you to explain the code line-by-line in your interview, use these concise explanations:
-
-### 1. Why Vanilla JS over React/Frameworks?
-> *"Coming from a Cloud & Systems background, I prioritized zero-dependency architecture. Vanilla JS allowed me to ship a <45KB bundle with 100/100 Lighthouse performance, zero build-step security vulnerabilities, and instant Edge CDN delivery on Azure Static Web Apps."*
-
-### 2. How does the Theme Engine work? (`style.css` & `script.js`)
-> *"In `style.css`, colors are defined using CSS Custom Properties (`var(--bg-primary)`). In `script.js`, clicking the theme button toggles the `data-theme="dark|light"` attribute on the `<html>` root element and persists the preference in `localStorage`."*
-
-### 3. How does the Live Execution Inspector work? (`script.js`)
-> *"The execution state is stored in a JavaScript object map (`SCENARIOS`). Clicking a tab or node triggers `renderScenario()` and `selectNode()`, which updates the DOM with pretty-printed, syntax-highlighted JSON using string regex replacement."*
-
-### 4. How does the Developer CLI Easter Egg work? (`script.js`)
-> *"A global `keydown` event listener monitors key combinations. Pressing `Ctrl + K` or entering the Konami sequence (`Up Up Down Down Left Right Left Right B A`) toggles the modal's `.open` class and processes terminal commands using a JavaScript `switch` statement."*
