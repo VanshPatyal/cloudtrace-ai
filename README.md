@@ -2,7 +2,8 @@
 
 > **Built for Acdyon Technologies Frontend Challenge (Track 2 — The Premium Home Page)**  
 > **Tech Stack**: Vanilla HTML5, CSS3, ES6 JavaScript (Zero Dependencies, <45KB Footprint)  
-> **Deployment**: Deployed live on **Azure Static Web Apps**
+> **Deployment**: Deployed live on **Azure Static Web Apps**  
+> **Live Demo**: https://witty-sky-08cbca800.7.azurestaticapps.net/
 
 ---
 
