@@ -77,7 +77,7 @@
       <div class="hero-badge-row">
         <span class="hero-badge">
           <span class="pulse-dot"></span>
-          <span>Zero Telemetry Overhead • Open Specification v1.0</span>
+          <span>Designed for Low-Overhead Observability • Open Specification v1.0</span>
         </span>
       </div>
 
@@ -87,7 +87,7 @@
       </h1>
 
       <p class="hero-subtitle">
-        Real-time visual tracing, tool call inspection, and state replay for autonomous AI workflows running on Azure Static Web Apps, Serverless, and Kubernetes.
+        Real-time visual tracing, tool call inspection, and state replay for realistic multi-agent workflow scenarios running across Azure Static Web Apps, Serverless, and Kubernetes.
       </p>
 
       <div class="hero-actions">
@@ -233,9 +233,9 @@
   <section class="features-section" id="features">
     <div class="section-header text-center">
       <span class="section-tag"><i class="fa-solid fa-shield-halved"></i> Enterprise Capabilities</span>
-      <h2 class="section-title">Built for Production AI Pipelines</h2>
+      <h2 class="section-title">Built for Modern AI Pipelines</h2>
       <p class="section-desc">
-        Designed from the ground up for zero-friction integration into serverless architectures, cloud functions, and microservices.
+        Designed for low-friction integration patterns across serverless architectures, cloud functions, and microservices.
       </p>
     </div>
 
@@ -246,7 +246,7 @@
         </div>
         <h3 class="feature-title">Sub-Millisecond Overhead</h3>
         <p class="feature-text">
-          Asynchronous telemetry buffer writes telemetry batches directly to Azure Event Hubs or Redis with zero execution blocking.
+          Designed for low-overhead batch export patterns that can integrate with Azure Event Hubs or Redis-style queues without heavy runtime overhead.
         </p>
       </div>
 
@@ -347,7 +347,7 @@ import { CloudTrace } from "@cloudtrace/agent-sdk";
 
 const tracer = new CloudTrace({
   apiKey: process.env.CLOUDTRACE_AZURE_KEY,
-  environment: "production",
+  environment: "sandbox",
   redactSensitiveData: true
 });
 
