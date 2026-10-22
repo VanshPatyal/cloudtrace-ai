@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Independent Kaho reading and learning app redesign concept.">
+  <title>Kaho — Independent CV Reading Concept</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="kaho-concept.css">
+</head>
+<body>
+  <div class="concept-bar">
+    <span>INDEPENDENT CONCEPT REDESIGN</span>
+    <span>Reading, notes &amp; learning — reimagined for Kaho</span>
+  </div>
+
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="Kaho home" data-screen-link="reading">
+      <span class="brand-mark" aria-hidden="true">k</span>
+      <span>kaho</span>
+    </a>
+
+    <nav class="primary-nav" aria-label="Main navigation">
+      <button class="top-link active" data-screen-link="reading">Library</button>
+      <button class="top-link" data-screen-link="notes">Highlights <span class="nav-count" data-saved-count>4</span></button>
+    </nav>
+
+    <div class="top-actions">
+      <button class="icon-button search-trigger" aria-label="Search" title="Search">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.4"></circle><path d="m16 16 4.2 4.2"></path></svg>
+      </button>
+      <button class="profile-button" aria-label="Profile">V</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="screen reading-screen active" id="screen-reading" aria-label="Focused reading">
+      <aside class="sidebar">
+        <button class="back-link"><span aria-hidden="true">←</span> Library</button>
+        <div class="book-summary">
+          <div class="book-cover" aria-hidden="true">
+            <span class="cover-kicker">PRODUCT &amp; TECHNOLOGY</span>
+            <span class="cover-title">Vansh<br>Patyal</span>
+            <span class="cover-rule"></span>
+            <span class="cover-author">SELECTED WORK</span>
+          </div>
+          <div class="book-meta">
+            <h2>Vansh Patyal · Resume</h2>
+            <p>Computer Science · Product &amp; UX</p>
+          </div>
+        </div>
+
+        <div class="sidebar-heading">
+          <span>CONTENTS</span>
+          <button class="quiet-icon" aria-label="Collapse contents">⌃</button>
+        </div>
+        <nav class="toc" aria-label="Table of contents">
+          <button class="toc-item active" data-section="projects"><span class="toc-number">01</span><span>Selected projects</span></button>
+          <button class="toc-subitem active" data-section="xeliport">Xeliport trade dashboard <span>01</span></button>
+          <button class="toc-subitem" data-section="growth">Growth campaigns <span>01</span></button>
+          <button class="toc-subitem" data-section="whatsapp">WhatsApp feature proposal <span>01</span></button>
+          <button class="toc-item" data-section="summary"><span class="toc-number">02</span><span>Professional summary</span><span class="toc-page">01</span></button>
+          <button class="toc-item" data-section="skills"><span class="toc-number">03</span><span>Skills</span><span class="toc-page">01</span></button>
+          <button class="toc-item" data-section="training"><span class="toc-number">04</span><span>Summer training</span><span class="toc-page">01</span></button>
+          <button class="toc-item" data-section="education"><span class="toc-number">05</span><span>Certifications &amp; education</span><span class="toc-page">01</span></button>
+        </nav>
+
+        <div class="sidebar-bottom">
+          <button class="sidebar-help" data-screen-link="notes"><span class="help-icon">▤</span> <span data-saved-count>4</span> saved moments <span class="sidebar-arrow">→</span></button>
+        </div>
+      </aside>
+
+      <div class="reading-area">
+        <div class="reader-toolbar">
+          <div class="breadcrumb"><span>Vansh Patyal · Resume</span><span class="crumb-divider">/</span><strong>Selected projects</strong></div>
+          <div class="toolbar-controls">
+            <button class="tool-button" aria-label="Decrease font size" title="Decrease font size" data-font="decrease">A−</button>
+            <button class="tool-button" aria-label="Increase font size" title="Increase font size" data-font="increase">A+</button>
+            <span class="toolbar-separator"></span>
+            <button class="tool-button spacing-button" title="Adjust line spacing">↕ <span>Comfortable</span></button>
+            <span class="toolbar-separator"></span>
+            <button class="action-button is-active" id="highlight-action" aria-pressed="true"><span class="highlight-icon"></span> Highlight</button>
+            <button class="action-button" data-screen-link="notes"><span class="note-icon">▤</span> Notes</button>
+            <button class="primary-button compact" data-screen-link="ai"><span class="sparkle">✳</span> Ask AI</button>
+          </div>
+        </div>
+
+        <div class="reader-content">
+          <article class="document-page">
+            <div class="page-eyebrow"><span>SELECTED PROJECTS</span><span class="eyebrow-line"></span><span>PAGE 01</span></div>
+            <h1>Product thinking<br>in practice</h1>
+            <p class="page-deck">Selected work across product prototyping, UX, and data-informed digital campaigns.</p>
+            <div class="author-line"><span class="author-avatar">VP</span><span>Vansh Patyal</span><span class="author-dot">·</span><span>Computer Science</span></div>
+
+            <div class="article-copy" id="article-copy">
+              <h2 id="projects">Selected projects</h2>
+              <h2 id="xeliport">Xeliport Global Trade Dashboard</h2>
+              <p class="project-caption">Interactive prototype · Product &amp; UI/UX Lead · Sep 2026</p>
+              <p>An interactive prototype for a live logistics control tower, applying layered telemetry signals to surface actionable metrics.</p>
+              <p class="selected-passage source-passage" id="selected-passage">Pioneered a live logistics control tower prototype applying layered telemetry signals for actionable metrics.</p>
+              <p id="responsive-passage" class="source-passage">Created responsive layouts with high contrast and dynamic hover states. Published the prototype through GitHub CI/CD pipelines for rapid stakeholder validation.</p>
+              <h2 id="growth">Digital Marketing &amp; Growth Campaigns</h2>
+              <p class="project-caption">Wix · Mailchimp · Blogger · Campaign analytics · Jan 2026</p>
+              <p>Used Wix, Mailchimp, Blogger, and campaign analytics to improve discoverability and track conversions.</p>
+              <p id="marketing-passage" class="source-passage">Applied audience segmentation and SEO practices, executed targeted Mailchimp campaigns, and tracked conversion metrics. Designed responsive Wix and Blogger landing pages with clear calls to action.</p>
+              <h2 id="whatsapp">WhatsApp Product Teardown</h2>
+              <p id="whatsapp-passage" class="source-passage">Identified friction around buried documents in active group chats and proposed a Smart Media Vault to categorize and pin important files.</p>
+              <p>Authored a product requirements brief covering user stories, UX workflows, and adoption success metrics.</p>
+              <h2 id="summary">Professional summary</h2>
+              <p>Final-year Computer Science undergraduate blending strong technical foundations with product thinking, rapid prototyping, and data-driven execution. Experienced in translating complex workflows into intuitive digital interfaces, analyzing user behavior, and scoping structured future requirements. Eager to bring a bias for action and technical fluency to a high-growth product team.</p>
+              <h2 id="skills">Skills</h2>
+              <p><strong>Product &amp; marketing:</strong> product thinking, user journey mapping, audience segmentation, campaign analytics, conversion rate optimization, go-to-market strategy, and PRD writing.</p>
+              <p><strong>UX &amp; prototyping:</strong> modern web design, responsive micro-interactions, component-based architecture, design systems, and Next.js/React prototyping.</p>
+              <p><strong>Tools &amp; technology:</strong> Mailchimp, Wix, Blogger, Git, Linux, C++, basic AWS Cloud Foundations, Azure, and YAML.</p>
+              <h2 id="training">Summer training · Cipher School</h2>
+              <p>Built a student management system using Java and object-oriented programming. Structured operations with encapsulation, abstraction, and polymorphism, and used file handling for persistent records.</p>
+              <h2 id="education">Certifications &amp; education</h2>
+              <p>Java with OOPs Programming · Cipher School · Jul 2025<br>AWS Academy Graduate: AWS Academy Cloud Foundations · Apr 2025<br>Responsive Web Design · freeCodeCamp · Oct 2023<br>UI/UX Designing using ChatGPT · Simplilearn · Sep 2026</p>
+              <p>Bachelor of Technology, Computer Science and Engineering · Lovely Professional University · 2023–present · CGPA 6.4<br>Intermediate, PCM · Aryan Public Senior Secondary School · 2022–2023 · 80%<br>Matriculation · Aryan Public Senior Secondary School · 2020–2021 · 80%</p>
+            </div>
+
+            <div class="page-footer"><span>VANSH PATYAL · RESUME</span><span>01</span></div>
+          </article>
+
+          <aside class="reading-rail">
+            <div class="rail-card">
+              <div class="rail-card-heading">PAGE SUMMARY</div>
+              <p class="page-summary">Selected projects<br><strong>Xeliport trade dashboard</strong></p>
+              <div class="session-divider"></div>
+              <div class="session-stat"><span>Saved notes</span><strong data-saved-count>4</strong></div>
+              <button class="rail-card-link" data-screen-link="notes">View saved notes <span>→</span></button>
+            </div>
+            <div class="page-control"><button aria-label="Previous page">←</button><span>Page 1</span><button aria-label="Next page">→</button></div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="screen ai-screen" id="screen-ai" aria-label="Ask AI about the passage">
+      <div class="ai-workspace">
+        <div class="ai-document-column">
+          <div class="workspace-toolbar">
+            <button class="back-to-reading" data-screen-link="reading">← <span>Back to reading</span></button>
+            <div class="workspace-document-label"><span class="tiny-book">▤</span><span>Vansh Patyal · Resume</span><span class="crumb-divider">·</span><span>Page 1</span></div>
+            <span class="reading-pill"><span></span> Reading</span>
+          </div>
+          <div class="ai-document">
+            <div class="page-eyebrow"><span>SELECTED PROJECTS</span><span class="eyebrow-line"></span><span>PAGE 01</span></div>
+            <h1>Product thinking<br>in practice</h1>
+            <p class="page-deck">Selected work across product prototyping, UX, and data-informed digital campaigns.</p>
+            <div class="author-line"><span class="author-avatar">VP</span><span>Vansh Patyal</span><span class="author-dot">·</span><span>Computer Science</span></div>
+            <div class="article-copy">
+              <h2>Xeliport Global Trade Dashboard</h2>
+              <p>An interactive prototype for a live logistics control tower, applying layered telemetry signals to surface actionable metrics.</p>
+              <p class="selected-passage">Pioneered a live logistics control tower prototype applying layered telemetry signals for actionable metrics.</p>
+              <p>Created responsive layouts with high contrast and dynamic hover states. Published the prototype through GitHub CI/CD pipelines for rapid stakeholder validation.</p>
+            </div>
+          </div>
+          <div class="source-chip"><span class="source-mark">“</span><span>Selected source passage from <strong>Vansh Patyal · Resume</strong>, page 1</span><button data-screen-link="reading">View passage</button></div>
+        </div>
+
+        <aside class="assistant-panel">
+          <div class="assistant-header">
+            <div class="assistant-title"><span class="assistant-avatar">✳</span><div><strong>Ask Kaho</strong><small>Understand what you're reading</small></div></div>
+            <button class="quiet-icon" data-screen-link="reading" aria-label="Close AI panel">×</button>
+          </div>
+          <div class="assistant-thread">
+            <div class="thread-label">SELECTED FROM YOUR READING <span>PAGE 01</span></div>
+            <blockquote>“Pioneered a live logistics control tower prototype applying layered telemetry signals for actionable metrics.”</blockquote>
+            <div class="thread-rule"><span></span><small>YOUR QUESTION</small></div>
+            <div class="user-message">Explain the telemetry idea simply</div>
+            <div class="ai-response">
+              <div class="response-heading"><span class="assistant-avatar small">✳</span><strong>Example explanation</strong></div>
+              <p>This describes a dashboard concept that brings logistics signals into one view, so people can use those signals to make decisions.</p>
+              <p>The CV describes a prototype; it does not claim a production deployment or measured business impact.</p>
+              <div class="response-source">Illustrative response <span>·</span> Not connected to an AI service</div>
+              <button class="save-note-button" id="save-explanation"><span>＋</span> Save explanation as note</button>
+              <span class="saved-feedback" id="saved-feedback" role="status">Saved to your notes</span>
+            </div>
+          </div>
+          <div class="composer-area">
+            <div class="suggestion-row"><button class="prompt-chip">What does telemetry mean?</button><button class="prompt-chip">Summarize this project</button></div>
+            <form class="composer" id="question-form">
+              <textarea id="question-input" rows="2" placeholder="Ask about this passage…" aria-label="Ask about this passage"></textarea>
+              <div class="composer-bottom"><span>Example only · AI service not connected</span><button type="submit" aria-label="Send question">↑</button></div>
+            </form>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="screen notes-screen" id="screen-notes" aria-label="Notes and highlights">
+      <div class="notes-layout">
+        <aside class="notes-sidebar">
+          <div class="notes-sidebar-heading"><div><span class="section-kicker">YOUR STUDY SPACE</span><h1>Notes &amp; highlights</h1></div><button class="more-button" aria-label="More options">···</button></div>
+          <div class="notes-search"><span class="search-glyph"></span><input type="search" placeholder="Find a note or highlight" aria-label="Find a note or highlight"><kbd>⌘ K</kbd></div>
+          <div class="filter-row"><button class="filter-button active" data-filter="all">All <span>4</span></button><button class="filter-button" data-filter="HIGHLIGHT">Highlights <span>2</span></button><button class="filter-button" data-filter="NOTE">Notes <span>2</span></button></div>
+          <div class="collection-label"><span>VANSH PATYAL · RESUME</span><button aria-label="Sort notes">↓</button></div>
+          <div class="note-list">
+            <button class="note-list-item active" data-note="xeliport">
+              <span class="note-color"></span><span class="note-item-content"><strong>Layered signals, actionable metrics</strong><span>“Pioneered a live logistics control tower…”</span><small>Selected projects · Page 1 <i>·</i> Highlight</small></span><span class="note-item-arrow">›</span>
+            </button>
+            <button class="note-list-item" data-note="responsive">
+              <span class="note-color pale"></span><span class="note-item-content"><strong>Responsive UI details</strong><span>“High-contrast layouts and dynamic hover…”</span><small>Selected projects · Page 1 <i>·</i> Note</small></span><span class="note-item-arrow">›</span>
+            </button>
+            <button class="note-list-item" data-note="marketing">
+              <span class="note-color"></span><span class="note-item-content"><strong>Campaign analytics</strong><span>“Audience segmentation and SEO practices…”</span><small>Selected projects · Page 1 <i>·</i> Highlight</small></span><span class="note-item-arrow">›</span>
+            </button>
+            <button class="note-list-item" data-note="whatsapp">
+              <span class="note-color pale"></span><span class="note-item-content"><strong>Smart Media Vault proposal</strong><span>“Categorize and pin essential files…”</span><small>Selected projects · Page 1 <i>·</i> Note</small></span><span class="note-item-arrow">›</span>
+            </button>
+          </div>
+          <div class="notes-sidebar-footer"><span class="tiny-book">▤</span><span><span data-saved-count>4</span> saved moments</span><button aria-label="More saved moments">···</button></div>
+        </aside>
+
+        <div class="note-detail-area">
+          <div class="note-detail-top">
+            <div class="breadcrumb"><span>Study space</span><span class="crumb-divider">/</span><strong>Vansh Patyal · Resume</strong></div>
+            <button class="open-document-button" data-screen-link="reading"><span>↗</span> Open in document</button>
+          </div>
+          <div class="note-detail-content">
+            <div class="note-detail-main">
+              <div class="detail-label"><span class="detail-label-dot"></span> HIGHLIGHT <span class="detail-divider">·</span> SELECTED PROJECTS</div>
+              <h2 id="detail-title">Layered signals, actionable metrics</h2>
+              <blockquote class="highlight-quote" id="detail-quote">“Pioneered a live logistics control tower prototype applying layered telemetry signals for actionable metrics.”</blockquote>
+              <div class="quote-reference"><span class="quote-book-icon">▤</span><span><strong>Vansh Patyal · Resume</strong><small id="detail-reference">Selected projects · Page 1</small></span><button class="page-link" data-screen-link="reading">Go to page <span>→</span></button></div>
+
+              <div class="annotation-card">
+                <div class="annotation-heading"><div class="annotation-author"><span class="author-avatar small-avatar">A</span><span><strong>Your note</strong><small>Added today at 10:42 AM</small></span></div><button class="quiet-icon" aria-label="More note options">···</button></div>
+                <div class="annotation-body" id="annotation-body">Keep this framed as a prototype. The strongest detail is how the design connects layered signals with actionable metrics.</div>
+                <button class="edit-note-button" id="edit-note"><span>✎</span> Edit note</button>
+              </div>
+
+              <div class="detail-actions"><button class="secondary-button" id="copy-quote"><span>▢</span> Copy passage</button><button class="secondary-button" id="ask-from-note" data-screen-link="ai"><span class="sparkle">✳</span> Ask AI about this</button></div>
+            </div>
+            <aside class="note-context">
+              <div class="context-card">
+                <span class="section-kicker">IN THIS DOCUMENT</span>
+                <h3>Selected projects</h3>
+                <p>Resume <span>·</span> Product &amp; UX work</p>
+                <div class="context-progress"><span></span></div>
+                <button data-screen-link="reading">Continue reading <span>→</span></button>
+              </div>
+              <div class="context-tip"><span class="tip-icon">✳</span><div><strong>Project context</strong><p>This is a prototype concept, not a production deployment.</p><button data-screen-link="reading">Review project passage <span>→</span></button></div></div>
+            </aside>
+          </div>
+          <div class="notes-bottom-bar"><span><span class="saved-check">•</span> Independent concept · your CV content</span><span>Edits reset when refreshed</span></div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <div class="toast" id="toast" role="status"></div>
+  <script src="kaho-concept.js"></script>
+</body>
+</html>
